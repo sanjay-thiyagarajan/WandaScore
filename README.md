@@ -38,7 +38,7 @@
 2. **Download and install WandaScore**:
    ```bash
    cd extensions/
-   git clone [your-repo-url] WandaScore
+   git clone https://github.com/sanjay-thiyagarajan/WandaScore WandaScore
    ```
 
 3. **Add to LocalSettings.php**:
