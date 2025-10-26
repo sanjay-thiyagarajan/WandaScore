@@ -1,0 +1,34 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sanjay Thiyagarajan"
+		]
+	},
+	"wandascore-desc": "AI-powered page quality scoring and review system using Wanda extension",
+	"wandascore": "WandaScore",
+	"wandascore-tile-title": "WandaScore",
+	"wandascore-tile-loading": "Loading...",
+	"wandascore-tile-error": "Error loading score",
+	"wandascore-tile-click-details": "Click to view detailed review",
+	"wandascore-review-title": "WandaScore Review for",
+	"wandascore-review-loading": "Analyzing page content... This may take a minute.",
+	"wandascore-review-error": "Unable to load review. Please try again.",
+	"wandascore-review-score-label": "Overall Score",
+	"wandascore-review-refresh": "Refresh Score",
+	"wandascore-review-timestamp": "Last reviewed",
+	"wandascore-review-bias-label": "Bias Detection",
+	"wandascore-review-llm-label": "Human-Written Content",
+	"wandascore-review-language-label": "Language Quality",
+	"wandascore-review-grammar-label": "Grammar & Spelling",
+	"wandascore-review-conciseness-label": "Conciseness",
+	"wandascore-form-legend": "Select a page to review",
+	"wandascore-form-page-label": "Page title",
+	"wandascore-form-submit": "View Review",
+	"wandascore-error-page-not-found": "Page \"$1\" not found",
+	"wandascore-error-generation-failed": "Failed to generate score. Please ensure the Wanda extension is properly configured.",
+	"apihelp-wandascore-summary": "Get WandaScore for a wiki page",
+	"apihelp-wandascore-param-page": "Title of the page to score",
+	"apihelp-wandascore-param-refresh": "Force refresh the score instead of using cached value",
+	"apihelp-wandascore-example-1": "Get the score for the Main Page",
+	"apihelp-wandascore-example-2": "Get a fresh score for the Main Page"
+}

@@ -1,0 +1,125 @@
+{
+	"name": "WandaScore",
+	"version": "1.0.0",
+	"author": [
+		"Sanjay Thiyagarajan"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:WandaScore",
+	"descriptionmsg": "wandascore-desc",
+	"license-name": "GPL-2.0-or-later",
+	"type": "specialpage",
+	"requires": {
+		"MediaWiki": ">= 1.42.0",
+		"extensions": {
+			"Wanda": "*"
+		}
+	},
+	"MessagesDirs": {
+		"WandaScore": [
+			"i18n"
+		]
+	},
+	"ExtensionMessagesFiles": {
+		"WandaScoreAlias": "WandaScore.alias.php"
+	},
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\WandaScore\\": "includes/"
+	},
+	"APIModules": {
+		"wandascore": "MediaWiki\\Extension\\WandaScore\\ApiWandaScore"
+	},
+	"SpecialPages": {
+		"WandaScore": "MediaWiki\\Extension\\WandaScore\\Specials\\SpecialWandaScore"
+	},
+	"ResourceModules": {
+		"ext.wandascore.tile": {
+            "class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"packageFiles": [
+				"initTile.js",
+				"components/ScoreTile.vue"
+			],
+			"styles": [
+				"styles/tile.css"
+			],
+			"dependencies": [
+				"vue",
+				"mediawiki.api"
+			],
+            "codexComponents": [
+				"CdxProgressBar"
+			],
+			"messages": [
+				"wandascore-tile-title",
+				"wandascore-tile-loading",
+				"wandascore-tile-error",
+				"wandascore-tile-click-details"
+			]
+		},
+		"ext.wandascore.review": {
+            "class": "MediaWiki\\ResourceLoader\\CodexModule",
+			"packageFiles": [
+				"initReview.js",
+				"components/ReviewPage.vue",
+				"codex.js"
+			],
+			"styles": [
+				"styles/review.css"
+			],
+			"dependencies": [
+				"vue",
+				"mediawiki.api"
+			],
+            "codexComponents": [
+				"CdxButton",
+				"CdxProgressBar",
+				"CdxMessage"
+			],
+			"messages": [
+				"wandascore-review-title",
+				"wandascore-review-loading",
+				"wandascore-review-error",
+				"wandascore-review-score-label",
+				"wandascore-review-bias-label",
+				"wandascore-review-llm-label",
+				"wandascore-review-language-label",
+				"wandascore-review-grammar-label",
+				"wandascore-review-conciseness-label",
+				"wandascore-review-timestamp",
+				"wandascore-review-refresh"
+			]
+		}
+	},
+	"ResourceFileModulePaths": {
+		"localBasePath": "resources",
+		"remoteExtPath": "WandaScore/resources"
+	},
+	"Hooks": {
+		"BeforePageDisplay": "MediaWiki\\Extension\\WandaScore\\Hooks\\PageDisplayHooks::onBeforePageDisplay",
+		"PageSaveComplete": "MediaWiki\\Extension\\WandaScore\\Hooks\\PageSaveHooks::onPageSaveComplete",
+		"LoadExtensionSchemaUpdates": "MediaWiki\\Extension\\WandaScore\\Hooks\\SchemaHooks::onLoadExtensionSchemaUpdates"
+	},
+	"config": {
+		"WandaScoreNamespaces": {
+			"description": "Array of namespace IDs where WandaScore should review pages. Default is [0] (main namespace).",
+			"value": [0]
+		},
+		"WandaScoreAutoReview": {
+			"description": "Whether to automatically review pages on save. Default is true.",
+			"value": true
+		},
+		"WandaScoreShowTile": {
+			"description": "Whether to show the score tile on pages. Default is true.",
+			"value": true
+		},
+		"WandaScoreThresholds": {
+			"description": "Score thresholds for different quality levels. Keys: excellent, good, fair, poor.",
+			"value": {
+				"excellent": 90,
+				"good": 70,
+				"fair": 50,
+				"poor": 0
+			}
+		}
+	},
+	"manifest_version": 2
+}

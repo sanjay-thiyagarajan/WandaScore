@@ -1,0 +1,127 @@
+/* WandaScore Tile Styles */
+.wandascore-tile {
+	position: fixed;
+	top: 80px;
+	right: 20px;
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	padding: 12px 16px;
+	min-width: 120px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border: 2px solid #e0e0e0;
+}
+
+.wandascore-tile:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.wandascore-tile-icon {
+	font-size: 24px;
+}
+
+.wandascore-tile-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+}
+
+.wandascore-tile-label {
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #666;
+	margin-bottom: 4px;
+}
+
+.wandascore-tile-score {
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.wandascore-tile-loading,
+.wandascore-tile-error {
+	font-size: 16px;
+}
+
+.wandascore-tile-tooltip {
+	display: none;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	margin-top: 8px;
+	background: #333;
+	color: white;
+	padding: 6px 12px;
+	border-radius: 6px;
+	font-size: 12px;
+	white-space: nowrap;
+	z-index: 1000;
+}
+
+.wandascore-tile:hover .wandascore-tile-tooltip {
+	display: block;
+}
+
+/* Score color classes */
+.wandascore-excellent {
+	border-color: #00af89;
+}
+
+.wandascore-excellent .wandascore-tile-score {
+	color: #00af89;
+}
+
+.wandascore-good {
+	border-color: #3366cc;
+}
+
+.wandascore-good .wandascore-tile-score {
+	color: #3366cc;
+}
+
+.wandascore-fair {
+	border-color: #fc3;
+}
+
+.wandascore-fair .wandascore-tile-score {
+	color: #fc3;
+}
+
+.wandascore-poor {
+	border-color: #d33;
+}
+
+.wandascore-poor .wandascore-tile-score {
+	color: #d33;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.wandascore-tile {
+		top: 60px;
+		right: 10px;
+		padding: 10px 12px;
+		min-width: 100px;
+	}
+
+	.wandascore-tile-icon {
+		font-size: 20px;
+	}
+
+	.wandascore-tile-score {
+		font-size: 24px;
+	}
+
+	.wandascore-tile-label {
+		font-size: 10px;
+	}
+}

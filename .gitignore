@@ -1,0 +1,27 @@
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# PHP
+vendor/
+composer.phar
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# MediaWiki
+LocalSettings.php
+
+# Build artifacts
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+.cache/
